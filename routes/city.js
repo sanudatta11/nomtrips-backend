@@ -69,7 +69,19 @@ router.createCity = (req, res, next) => {
 };
 
 router.getCities = (req, res, next) => {
-
+    City.find({}, function (err, data) {
+        if (err)
+            res.status(500).json(err);
+        else if (!data)
+            res.status(404).json({
+                info: "City data not found"
+            })
+        else
+            res.status(200).json({
+                info: "City data found!",
+                data: data
+            })
+    });
 };
 
 router.editCity = (req, res, next) => {
@@ -111,7 +123,21 @@ router.editCity = (req, res, next) => {
 };
 
 router.deleteCity = (req, res, next) => {
-
+    let cityId = req.body.cityId;
+    if (cityId && ObjectId.$isValid(cityId)) {
+        City.findByIdAndRemove(cityId, function (err) {
+            if (err)
+                res.status(500).json(err);
+            else
+                res.status(200).json({
+                    info: "City Delete Successful"
+                })
+        });
+    } else {
+        res.status(300).json({
+            info: "Invalid City Id"
+        })
+    }
 };
 
 module.exports = router;
