@@ -38,33 +38,4 @@ let companyRoute = require('./companyRouter');
 //     }
 // });
 
-
-/* GET users listing. */
-router.get('/',companyRoute.getCompany);
-router.post('/createJob',companyRoute.createJob);
-router.get('/getJobs',companyRoute.getJobs);
-router.post('/applyjob',companyRoute.applyjob);
-
-
-router.get('/getQuestions',companyRoute.getQuestions);
-router.post('/createQuestions',companyRoute.createQuestions);
-
-//Only Recruiters API
-router.get('/getApplicantDetail/:userId',companyRoute.getApplicantDetail);
-router.get('/getAllApplicants',companyRoute.getAllApplicants);
-router.get('/selectApplicant/:subId',companyRoute.selectApplicant);
-router.get('/rejectApplicant/:subId',companyRoute.rejectApplicant);
-
-//Applicant Only -- Also Returns Status
-router.get('/jobsApplied',companyRoute.jobsApplied);
-router.post('/completeProfile',companyRoute.completeProfile);
-router.get('/isCompleteProfile/:userId',companyRoute.isCompleteProfile);
-
-//Scrappers
-router.get('/getCodechefProfile/:codechef',companyRoute.getCodeChef);
-router.get('/getCodeChefGraph/:codechef',companyRoute.getCodeChefGraph);
-router.get('/getFiverrProfile/:fiverr',companyRoute.getFiverr);
-router.get('/getBehanceUserDetail/:behance',companyRoute.getBehanceUserDetail);
-router.get('/getBehanceProjectDetail/:behance',companyRoute.getBehanceProjectDetail);
-router.get('/getBehanceCollectionDetail/:behance',companyRoute.getBehanceCollectionDetail);
 module.exports = router;

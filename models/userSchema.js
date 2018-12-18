@@ -2,11 +2,6 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
-/**
- * User status code and meanings
- * 1 - Admin - only one in whole system
- * 2 - Normal - Other Users
- */
 var userSchema = new Schema({
         "firstName": {
             type: String,
@@ -33,6 +28,14 @@ var userSchema = new Schema({
         },
         "gender": {
             type: String
+        },
+        "bio" : {
+            type: String,
+            required: true
+        },
+        "subscribed" : {
+            type: Boolean,
+            default: true
         },
         "typeOfUser" : {
             type: Number,

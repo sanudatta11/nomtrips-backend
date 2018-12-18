@@ -17,7 +17,7 @@ var citySchema = new Schema({
         "longitude": {
             type: String
         },
-        "titlePage" : {
+        "pageTitle" : {
             type: String
         }
     },
