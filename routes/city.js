@@ -5,7 +5,7 @@ let validator = require('validator');
 let async = require('async');
 let jwt = require('jsonwebtoken');
 
-let ObjectId = require('mongoose').Types.ObjectId
+let ObjectId = require('mongoose').Types.ObjectId;
 
 let User = require('../models/userSchema');
 let City = require('../models/citySchema');
@@ -15,7 +15,7 @@ let Social = require('../models/socialMediaSchema');
 
 router.createCity = (req, res, next) => {
     let name = req.body.name;
-    let description = req.body.name;
+    let description = req.body.description;
     let pageTitle = req.body.pageTitle;
     let latitude = req.body.latitude;
     let longitude = req.body.longitude;
@@ -33,35 +33,33 @@ router.createCity = (req, res, next) => {
             City.findOne({
                 name: name
             }, function (err, data) {
-                if (err) {
+                if (err)
                     res.status(500).json(err);
-                else
-                    if (data)
-                        res.status(300).json({
-                            info: "Previous City Found with given name"
-                        })
-                    else {
-                        let newCity = new City({
-                            name: name,
-                            description: description,
-                            latitude: latitude,
-                            longitude: longitude,
-                            pageTitle: pageTitle
-                        });
-                        newCity.save(function (err, data) {
-                            if (err)
-                                res.status(500).json(err);
-                            else if (!data)
-                                res.status(404).json({
-                                    info: "Blank Object returned Save city"
-                                });
-                            else
-                                res.status(200).json({
-                                    info: "City save successful",
-                                    cityObj: data
-                                });
-                        });
-                    }
+                else if (data)
+                    res.status(300).json({
+                        info: "Previous City Found with given name"
+                    })
+                else {
+                    let newCity = new City({
+                        name: name,
+                        description: description,
+                        latitude: latitude,
+                        longitude: longitude,
+                        pageTitle: pageTitle
+                    });
+                    newCity.save(function (err, data) {
+                        if (err)
+                            res.status(500).json(err);
+                        else if (!data)
+                            res.status(404).json({
+                                info: "Blank Object returned Save city"
+                            });
+                        else
+                            res.status(200).json({
+                                info: "City save successful",
+                                cityObj: data
+                            });
+                    });
                 }
             });
         }
@@ -69,13 +67,33 @@ router.createCity = (req, res, next) => {
 };
 
 router.getCities = (req, res, next) => {
-    City.find({}, function (err, data) {
+    let cityName = req.params.cityName;
+    City.find({
+        name : new RegExp('^'+cityName+'$', "i")
+    }, function (err, data) {
+        if (err)
+            res.status(500).json(err);
+        else if (!data.length)
+            res.status(404).json({
+                info: "City data not found"
+            })
+        else
+            res.status(200).json({
+                info: "City data found!",
+                data: data
+            })
+    });
+};
+
+router.getCityById = (req,res,next) => {
+    let cityId = req.body.cityId;
+    City.findById(cityId, function (err, data) {
         if (err)
             res.status(500).json(err);
         else if (!data)
             res.status(404).json({
                 info: "City data not found"
-            })
+            });
         else
             res.status(200).json({
                 info: "City data found!",
@@ -91,11 +109,11 @@ router.editCity = (req, res, next) => {
             if (err)
                 res.status(500).json({
                     info: "City find Error"
-                })
+                });
             else if (!cityObj)
                 res.status(404).json({
                     info: "City Object not found for edit"
-                })
+                });
             else {
                 let description = req.body.description;
                 let pageTitle = req.body.pageTitle;

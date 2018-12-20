@@ -3,6 +3,11 @@ let Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 var restaurantSchema = new Schema({
+        "cityId": {
+            type: ObjectId,
+            required: true,
+            ref: 'City'
+        },
         "restaurantName": {
             type: String,
             required: true
@@ -11,24 +16,32 @@ var restaurantSchema = new Schema({
             type: String,
             required: true
         },
-        "address" : {
+        "address": {
             type: String,
             required: true
         },
-        "phone" : {
+        "phone": {
             type: String,
             required: true
         },
-        "cuisine" : {
+        "cuisine": {
             type: Array
         },
-        "timeOpen" : {
-          type: String
+        "timeOpen": {
+            type: String
         },
-        "timeClose" : {
-          type: String
+        "timeClose": {
+            type: String
         },
-        "latitude" : {
+        "affordability" :{
+            type: Number,
+            default: 1
+        },
+        "rating" :{
+            type: Number,
+            default: 1
+        },
+        "latitude": {
             type: String,
             required: true
         },
@@ -48,7 +61,10 @@ var restaurantSchema = new Schema({
         "gplus": {
             type: String
         },
-
+        "nomCert" : {
+          type : Boolean,
+          default : false
+        }
     },
     {
         timestamps: true
