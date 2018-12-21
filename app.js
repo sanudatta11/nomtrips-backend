@@ -16,7 +16,7 @@ let router = require('./routes/router');
 let auth = require('./routes/auth');
 
 //Swagger
-// const swaggerDocument = require('./docs/sappen2-swagger.json');
+const swaggerDocument = require('./docs/swagger.json');
 //CORS
 let corsOptions = {
     origin: ['*'],
@@ -47,7 +47,7 @@ app.use(cors());
 app.post('/signUp',auth.signUp);
 app.post('/login',auth.login);
 app.use('/api',router);
-// app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     let err = new Error('Not Found');
