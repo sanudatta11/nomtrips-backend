@@ -1,33 +1,36 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var server = require('http');
-
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let server = require('http');
+let config = require('./config');
 
 const swaggerUi = require('swagger-ui-express');
-var cors = require('cors');
-var mongoose = require('mongoose');
+let cors = require('cors');
+let mongoose = require('mongoose');
 
-var app = express();
+let app = express();
+
+let router = require('./routes/router');
+let auth = require('./routes/auth');
 
 //Swagger
 // const swaggerDocument = require('./docs/sappen2-swagger.json');
 //CORS
-var corsOptions = {
+let corsOptions = {
     origin: ['*'],
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, letious SmartTVs) choke on 204
     allowedHeaders: ['Content-Type', 'Authorization', 'application/x-www-form-urlencoded'],
     credentials: true
-}
+};
 
 // database connection
 let options = {
     useNewUrlParser: true
 };
 mongoose.Promise = global.Promise;
-mongoose.connect('<URI>', options);
+mongoose.connect(config.MongoURI, options);
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
@@ -41,8 +44,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
+app.post('/signUp',auth.signUp);
+app.post('/login',auth.login);
+app.use('/api',router);
 // app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     let err = new Error('Not Found');

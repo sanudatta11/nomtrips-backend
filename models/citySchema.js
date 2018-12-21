@@ -3,7 +3,7 @@ let Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 var citySchema = new Schema({
-        "cityName": {
+        "name": {
             type: String,
             required: true
         },

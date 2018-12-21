@@ -30,7 +30,12 @@ var itinerarySchema = new Schema({
             required: true
         },
         "restaurantData" : [{
-            
+            date : {
+                type : Date
+            },
+            restaurantId : [{
+                type : ObjectId
+            }]
         }],
         "public" : {
             type :  Boolean,

@@ -86,7 +86,7 @@ router.getCities = (req, res, next) => {
 };
 
 router.getCityById = (req,res,next) => {
-    let cityId = req.body.cityId;
+    let cityId = req.params.cityId;
     City.findById(cityId, function (err, data) {
         if (err)
             res.status(500).json(err);
@@ -141,7 +141,7 @@ router.editCity = (req, res, next) => {
 };
 
 router.deleteCity = (req, res, next) => {
-    let cityId = req.body.cityId;
+    let cityId = req.params.cityId;
     if (cityId && ObjectId.$isValid(cityId)) {
         City.findByIdAndRemove(cityId, function (err) {
             if (err)
