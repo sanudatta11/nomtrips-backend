@@ -10,8 +10,13 @@ let userRoutes = require('./userProfile');
 
 //Non Auth Routes
 
+//City Routes
 router.get('/getCities/:cityName',cityRoutes.getCities);
 router.get('/getCityById/:cityId',cityRoutes.getCityById);
+
+//Restaurant Routes
+router.get('/getRestaurantsByCityId/:cityId',restaurantRoutes.getRestaurantsByCityId);
+router.post('/getRestaurantsByNameAndCityId',restaurantRoutes.getRestaurantsByNameAndCityId);
 
 //Auth Routes
 router.use(function(req, res, next) {
@@ -53,5 +58,7 @@ router.post('/editCity',cityRoutes.editCity);
 router.get('/deleteCity/:cityId',cityRoutes.deleteCity);
 
 //Restaurant Routes
-
+router.post('/createRestaurant',restaurantRoutes.createRestaurant);
+router.post('/editRestaurant',restaurantRoutes.editRestaurant);
+router.get('/deleteRestaurant/:restaurantId',restaurantRoutes.deleteRestaurant);
 module.exports = router;

@@ -103,7 +103,7 @@ router.createRestaurant = (req, res, next) => {
 
 router.editRestaurant = (req, res, next) => {
     let restaurantId = req.body.restaurantId;
-    if (restaurantId && ObjectId.$isValid(restaurantId)) {
+    if (restaurantId && ObjectId.isValid(restaurantId)) {
         Restaurant.findById(restaurantId, function (err, resObj) {
             if (err)
                 res.status(500).json({
@@ -182,8 +182,8 @@ router.editRestaurant = (req, res, next) => {
 };
 
 router.deleteRestaurant = (req, res, next) => {
-    let restaurantId = req.body.restaurantId;
-    if (restaurantId && ObjectId.$isValid(restaurantId)) {
+    let restaurantId = req.params.restaurantId;
+    if (restaurantId && ObjectId.isValid(restaurantId)) {
         Restaurant.findByIdAndRemove(restaurantId, function (err) {
             if (err)
                 res.status(500).json(err);
@@ -199,4 +199,43 @@ router.deleteRestaurant = (req, res, next) => {
     }
 };
 
+router.getRestaurantsByCityId = (req,res,next) => {
+    let cityId = req.params.cityId;
+    Restaurant.find({
+        cityId: cityId
+    },function (err,data) {
+        if (err)
+            res.status(500).json(err);
+        else if (!data.length)
+            res.status(404).json({
+                info: "Restaurant data not found"
+            });
+        else
+            res.status(200).json({
+                info: "Restaurant data found!",
+                data: data
+            })
+    });
+};
+
+router.getRestaurantsByNameAndCityId = (req,res,next) => {
+    let cityId = req.body.cityId;
+    let restaurantName = req.body.restaurantName;
+    Restaurant.find({
+        cityId: cityId,
+        restaurantName : new RegExp('^'+ restaurantName, "i")
+    },function (err,data) {
+        if (err)
+            res.status(500).json(err);
+        else if (!data.length)
+            res.status(404).json({
+                info: "Restaurant data not found"
+            });
+        else
+            res.status(200).json({
+                info: "Restaurant data found!",
+                data: data
+            })
+    });
+};
 module.exports = router;

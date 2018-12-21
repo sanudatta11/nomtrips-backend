@@ -70,7 +70,7 @@ router.getCities = (req, res, next) => {
     let cityName = req.params.cityName;
     console.log(cityName);
     City.find({
-        name : new RegExp('^'+cityName, "i")
+        name : new RegExp('^'+ cityName, "i")
     }, function (err, data) {
         if (err)
             res.status(500).json(err);
