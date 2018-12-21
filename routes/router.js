@@ -8,6 +8,12 @@ let cityRoutes = require('./city');
 let restaurantRoutes = require('./restaurant');
 let userRoutes = require('./userProfile');
 
+//Non Auth Routes
+
+router.get('/getCities/:cityName',cityRoutes.getCities);
+router.get('/getCityById/:cityId',cityRoutes.getCityById);
+
+//Auth Routes
 router.use(function(req, res, next) {
     let token = req.body.token || req.query.token || req.headers.authorization;
     try {
@@ -43,10 +49,9 @@ router.use(function(req, res, next) {
 
 //City Routes
 router.post('/createCity',cityRoutes.createCity);
-router.get('/getCities/:cityName',cityRoutes.getCities);
-router.get('/getCityById/:cityId',cityRoutes.getCityById);
 router.post('/editCity',cityRoutes.editCity);
 router.get('/deleteCity/:cityId',cityRoutes.deleteCity);
 
+//Restaurant Routes
 
 module.exports = router;
