@@ -1,0 +1,1978 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "NomTrips",
+    "description": "TODO: Add Description",
+    "contact": {
+      "name" : "Soumyajit Dutta",
+      "email" : "sanudatta11@gmail.com"
+    }
+  },
+  "host": "https://safe-dawn-57420.herokuapp.com",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/createRestaurant": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create Restaurant",
+        "tags": [
+          "Restaurant"
+        ],
+        "operationId": "ApiCreateRestaurantPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "cityId",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "restaurantName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "phone",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "address",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "latitude",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "longitude",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateRestaurantSuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "Restaurant save successful",
+                "newRes": {
+                  "cuisine": [],
+                  "affordability": 1,
+                  "rating": 1,
+                  "nomCert": false,
+                  "_id": "5c1d179d62d1d62cb8f0c197",
+                  "cityId": "5c1d1293bcbbf31530a33568",
+                  "restaurantName": "test Restaurant",
+                  "description": "Hi",
+                  "latitude": "40.2144 ° N",
+                  "longitude": "75.2342° N",
+                  "phone": "989289283",
+                  "address": "New add",
+                  "createdAt": "2018-12-21T16:41:01.048Z",
+                  "updatedAt": "2018-12-21T16:41:01.048Z",
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "407"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"197-pqA7lt7Licr/SlZYM5GkgmDPuck\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 16:41:01 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/editRestaurant": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Edit Restaurant",
+        "tags": [
+          "Restaurant"
+        ],
+        "operationId": "ApiEditRestaurantPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "restaurantId",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "restaurantName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "phone",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "address",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditRestaurantSuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "Restaurant Object Saved",
+                "resObj": {
+                  "cuisine": [],
+                  "affordability": 1,
+                  "rating": 1,
+                  "nomCert": false,
+                  "_id": "5c1d179d62d1d62cb8f0c197",
+                  "cityId": "5c1d1293bcbbf31530a33568",
+                  "restaurantName": "test Restaurant 2",
+                  "description": "Hi",
+                  "latitude": "40.2144 ° N",
+                  "longitude": "75.2342° N",
+                  "phone": "989289283",
+                  "address": "New add",
+                  "createdAt": "2018-12-21T16:41:01.048Z",
+                  "updatedAt": "2018-12-21T16:43:36.994Z",
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "406"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"196-VH1Cp5wJKdEt8PivOB73KUKlYHo\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 16:43:37 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/deleteRestaurant/5c1d179d62d1d62cb8f0c197": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Delete Restaurant",
+        "tags": [
+          "Restaurant"
+        ],
+        "operationId": "ApiDeleteRestaurant5c1d179d62d1d62cb8f0c197Get",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeleteRestaurantsuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "Restaurant Delete Successful"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "39"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"27-uuleP7T0onsa7VI5IH++jL7XNoY\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 16:45:18 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getRestaurantsByCityId/5c1d1293bcbbf31530a33568": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Restaurant by city id",
+        "tags": [
+          "Restaurant"
+        ],
+        "operationId": "ApiGetRestaurantsByCityId5c1d1293bcbbf31530a33568Get",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GetRestaurantbycityidsuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "Restaurant data found!",
+                "data": [
+                  {
+                    "cuisine": [],
+                    "affordability": 1,
+                    "rating": 1,
+                    "nomCert": false,
+                    "_id": "5c1d18a9f08fc24ca8541041",
+                    "cityId": "5c1d1293bcbbf31530a33568",
+                    "restaurantName": "test Restaurant",
+                    "description": "Hi",
+                    "latitude": "40.2144 ° N",
+                    "longitude": "75.2342° N",
+                    "phone": "989289283",
+                    "address": "New add",
+                    "createdAt": "2018-12-21T16:45:29.361Z",
+                    "updatedAt": "2018-12-21T16:45:29.361Z",
+                    "__v": 0
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "403"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"193-tthb4MGOxmZKiZkFbnu3e9TZdIg\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 16:52:00 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getRestaurantsByNameAndCityId": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Get Restaurant by name and City Id",
+        "tags": [
+          "Restaurant"
+        ],
+        "operationId": "ApiGetRestaurantsByNameAndCityIdPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "cityId",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "restaurantName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GetRestaurantbynameandCityIdsuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "Restaurant data found!",
+                "data": [
+                  {
+                    "cuisine": [],
+                    "affordability": 1,
+                    "rating": 1,
+                    "nomCert": false,
+                    "_id": "5c1d18a9f08fc24ca8541041",
+                    "cityId": "5c1d1293bcbbf31530a33568",
+                    "restaurantName": "chop chop chicken",
+                    "description": "Hi",
+                    "latitude": "40.2144 ° N",
+                    "longitude": "75.2342° N",
+                    "phone": "989289283",
+                    "address": "New add",
+                    "createdAt": "2018-12-21T16:45:29.361Z",
+                    "updatedAt": "2018-12-21T16:45:29.361Z",
+                    "__v": 0
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "405"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"195-5zsPP1J/ttmyxk1IrWZhmDJBriY\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 17:08:51 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/DeleteRestaurantsuccess"
+            },
+            "examples": {
+              "application/json": {
+                "info": "Restaurant data not found"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/signUp": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Signup User",
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "SignUpPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "firstName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "lastName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "phone",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "bio",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SignupUsersuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "User object created",
+                "userObj": {
+                  "subscribed": true,
+                  "typeOfUser": 2,
+                  "_id": "5c1d016d9570b81d30ddcec3",
+                  "firstName": "soumyajit",
+                  "lastName": "dutta",
+                  "email": "abcd@gmail.com",
+                  "password": "O8Sbc+L7IBkk2dzOX7bW/Xz79YxJvozEZDnAXcY0sVE=",
+                  "phone": 8989898989,
+                  "bio": "hi hi hi hih hii",
+                  "gender": "male",
+                  "createdAt": "2018-12-21T15:06:21.961Z",
+                  "updatedAt": "2018-12-21T15:06:21.961Z",
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "380"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"17c-i1gvJCGfDKcUsEQPNyK8sU/MgMI\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 15:06:22 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Login",
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "LoginPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginSuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "User Login successful",
+                "typeOfUser": 2,
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YzFkMDE2ZDk1NzBiODFkMzBkZGNlYzMiLCJ0eXBlT2ZVc2VyIjoyLCJuYW1lIjoiU291bXlhaml0IER1dHRhIiwiaWF0IjoxNTQ1NDA0ODcxLCJleHAiOjE2OTU0MDQ4NzF9.SItqx1B-i5WbnqQ1p7VsRluiMv6MCOwLG5_VKkH3yFs"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "287"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"11f-i3L1C8AF8XHgXi+m/83Roe+p73w\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 15:07:51 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/createCity": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create City",
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiCreateCityPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pageTitle",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "latitude",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "longitude",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateCitySuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "City save successful",
+                "cityObj": {
+                  "_id": "5c1d08698e9d4135ec25a55c",
+                  "name": "New York",
+                  "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+                  "latitude": "40.7128° N",
+                  "longitude": "74.0060° W",
+                  "pageTitle": "New York - Beauty City",
+                  "createdAt": "2018-12-21T15:36:09.892Z",
+                  "updatedAt": "2018-12-21T15:36:09.892Z",
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "661"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"295-LTMmr3i6tYtyVWVTv0lLaVeY60s\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 15:36:10 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getCities/lond": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Cities",
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiGetCitiesLondGet",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GetCitiesFound"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "City data found!",
+                "data": [
+                  {
+                    "_id": "5c1d08698e9d4135ec25a55c",
+                    "name": "New York",
+                    "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+                    "latitude": "40.7128° N",
+                    "longitude": "74.0060° W",
+                    "pageTitle": "New York - Beauty City",
+                    "createdAt": "2018-12-21T15:36:09.892Z",
+                    "updatedAt": "2018-12-21T15:36:09.892Z",
+                    "__v": 0
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "656"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"290-VK5XxUKAWHqYuZe7qYnXW/3pJC4\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 15:51:06 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/DeleteRestaurantsuccess"
+            },
+            "examples": {
+              "application/json": {
+                "info": "City data not found"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getCityById/5c1d08698e9d4135ec25a55c": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get City By id",
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiGetCityById5c1d08698e9d4135ec25a55cGet",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GetCityByidsuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "City data found!",
+                "data": {
+                  "_id": "5c1d08698e9d4135ec25a55c",
+                  "name": "New York",
+                  "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+                  "latitude": "40.7128° N",
+                  "longitude": "74.0060° W",
+                  "pageTitle": "New York - Beauty City",
+                  "createdAt": "2018-12-21T15:36:09.892Z",
+                  "updatedAt": "2018-12-21T15:36:09.892Z",
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "654"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"28e-feTVMSSu/d+C5D6sbxiHk74AIrA\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 16:16:19 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/editCity": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Edit City",
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiEditCityPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "cityId",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pageTitle",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditCitysuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "City Object Saved",
+                "cityObj": {
+                  "_id": "5c1d08698e9d4135ec25a55c",
+                  "name": "New York",
+                  "description": "This is new desc",
+                  "latitude": "40.7128° N",
+                  "longitude": "74.0060° W",
+                  "pageTitle": "this is new page title",
+                  "createdAt": "2018-12-21T15:36:09.892Z",
+                  "updatedAt": "2018-12-21T16:18:08.103Z",
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "298"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"12a-fV/5J1nzb/xpb78w+qIu0L1tzs0\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 16:18:08 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/deleteCity/5c1d08698e9d4135ec25a55c": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Delete City",
+        "tags": [
+          "City"
+        ],
+        "operationId": "ApiDeleteCity5c1d08698e9d4135ec25a55cGet",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeleteCitysuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "City Delete Successful"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "33"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"21-udaS9mczEemETzArP3C5THb9m5c\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 21 Dec 2018 16:19:21 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateRestaurantSuccess": {
+      "title": "CreateRestaurantSuccess",
+      "example": {
+        "info": "Restaurant save successful",
+        "newRes": {
+          "cuisine": [],
+          "affordability": 1,
+          "rating": 1,
+          "nomCert": false,
+          "_id": "5c1d179d62d1d62cb8f0c197",
+          "cityId": "5c1d1293bcbbf31530a33568",
+          "restaurantName": "test Restaurant",
+          "description": "Hi",
+          "latitude": "40.2144 ° N",
+          "longitude": "75.2342° N",
+          "phone": "989289283",
+          "address": "New add",
+          "createdAt": "2018-12-21T16:41:01.048Z",
+          "updatedAt": "2018-12-21T16:41:01.048Z",
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "newRes": {
+          "$ref": "#/definitions/NewRes"
+        }
+      },
+      "required": [
+        "info",
+        "newRes"
+      ]
+    },
+    "NewRes": {
+      "title": "NewRes",
+      "type": "object",
+      "properties": {
+        "cuisine": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "affordability": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nomCert": {
+          "type": "boolean"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "cityId": {
+          "type": "string"
+        },
+        "restaurantName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "cuisine",
+        "affordability",
+        "rating",
+        "nomCert",
+        "_id",
+        "cityId",
+        "restaurantName",
+        "description",
+        "latitude",
+        "longitude",
+        "phone",
+        "address",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "EditRestaurantSuccess": {
+      "title": "EditRestaurantSuccess",
+      "example": {
+        "info": "Restaurant Object Saved",
+        "resObj": {
+          "cuisine": [],
+          "affordability": 1,
+          "rating": 1,
+          "nomCert": false,
+          "_id": "5c1d179d62d1d62cb8f0c197",
+          "cityId": "5c1d1293bcbbf31530a33568",
+          "restaurantName": "test Restaurant 2",
+          "description": "Hi",
+          "latitude": "40.2144 ° N",
+          "longitude": "75.2342° N",
+          "phone": "989289283",
+          "address": "New add",
+          "createdAt": "2018-12-21T16:41:01.048Z",
+          "updatedAt": "2018-12-21T16:43:36.994Z",
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "resObj": {
+          "$ref": "#/definitions/ResObj"
+        }
+      },
+      "required": [
+        "info",
+        "resObj"
+      ]
+    },
+    "ResObj": {
+      "title": "ResObj",
+      "type": "object",
+      "properties": {
+        "cuisine": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "affordability": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nomCert": {
+          "type": "boolean"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "cityId": {
+          "type": "string"
+        },
+        "restaurantName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "cuisine",
+        "affordability",
+        "rating",
+        "nomCert",
+        "_id",
+        "cityId",
+        "restaurantName",
+        "description",
+        "latitude",
+        "longitude",
+        "phone",
+        "address",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "DeleteRestaurantsuccess": {
+      "title": "DeleteRestaurantsuccess",
+      "example": {
+        "info": "Restaurant Delete Successful"
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "info"
+      ]
+    },
+    "GetRestaurantbycityidsuccess": {
+      "title": "GetRestaurantbycityidsuccess",
+      "example": {
+        "info": "Restaurant data found!",
+        "data": [
+          {
+            "cuisine": [],
+            "affordability": 1,
+            "rating": 1,
+            "nomCert": false,
+            "_id": "5c1d18a9f08fc24ca8541041",
+            "cityId": "5c1d1293bcbbf31530a33568",
+            "restaurantName": "test Restaurant",
+            "description": "Hi",
+            "latitude": "40.2144 ° N",
+            "longitude": "75.2342° N",
+            "phone": "989289283",
+            "address": "New add",
+            "createdAt": "2018-12-21T16:45:29.361Z",
+            "updatedAt": "2018-12-21T16:45:29.361Z",
+            "__v": 0
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum"
+          }
+        }
+      },
+      "required": [
+        "info",
+        "data"
+      ]
+    },
+    "Datum": {
+      "title": "Datum",
+      "type": "object",
+      "properties": {
+        "cuisine": {
+          "example": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "affordability": {
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        },
+        "rating": {
+          "example": 1,
+          "type": "integer",
+          "format": "int32"
+        },
+        "nomCert": {
+          "example": false,
+          "type": "boolean"
+        },
+        "_id": {
+          "example": "5c1d18a9f08fc24ca8541041",
+          "type": "string"
+        },
+        "cityId": {
+          "example": "5c1d1293bcbbf31530a33568",
+          "type": "string"
+        },
+        "restaurantName": {
+          "example": "test Restaurant",
+          "type": "string"
+        },
+        "description": {
+          "example": "Hi",
+          "type": "string"
+        },
+        "latitude": {
+          "example": "40.2144 ° N",
+          "type": "string"
+        },
+        "longitude": {
+          "example": "75.2342° N",
+          "type": "string"
+        },
+        "phone": {
+          "example": "989289283",
+          "type": "string"
+        },
+        "address": {
+          "example": "New add",
+          "type": "string"
+        },
+        "createdAt": {
+          "example": "12/21/2018 4:45:29 PM",
+          "type": "string"
+        },
+        "updatedAt": {
+          "example": "12/21/2018 4:45:29 PM",
+          "type": "string"
+        },
+        "__v": {
+          "example": 0,
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "cuisine",
+        "affordability",
+        "rating",
+        "nomCert",
+        "_id",
+        "cityId",
+        "restaurantName",
+        "description",
+        "latitude",
+        "longitude",
+        "phone",
+        "address",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "GetRestaurantbynameandCityIdsuccess": {
+      "title": "GetRestaurantbynameandCityIdsuccess",
+      "example": {
+        "info": "Restaurant data found!",
+        "data": [
+          {
+            "cuisine": [],
+            "affordability": 1,
+            "rating": 1,
+            "nomCert": false,
+            "_id": "5c1d18a9f08fc24ca8541041",
+            "cityId": "5c1d1293bcbbf31530a33568",
+            "restaurantName": "chop chop chicken",
+            "description": "Hi",
+            "latitude": "40.2144 ° N",
+            "longitude": "75.2342° N",
+            "phone": "989289283",
+            "address": "New add",
+            "createdAt": "2018-12-21T16:45:29.361Z",
+            "updatedAt": "2018-12-21T16:45:29.361Z",
+            "__v": 0
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum"
+          }
+        }
+      },
+      "required": [
+        "info",
+        "data"
+      ]
+    },
+    "SignupUsersuccess": {
+      "title": "SignupUsersuccess",
+      "example": {
+        "info": "User object created",
+        "userObj": {
+          "subscribed": true,
+          "typeOfUser": 2,
+          "_id": "5c1d016d9570b81d30ddcec3",
+          "firstName": "soumyajit",
+          "lastName": "dutta",
+          "email": "abcd@gmail.com",
+          "password": "O8Sbc+L7IBkk2dzOX7bW/Xz79YxJvozEZDnAXcY0sVE=",
+          "phone": 8989898989,
+          "bio": "hi hi hi hih hii",
+          "gender": "male",
+          "createdAt": "2018-12-21T15:06:21.961Z",
+          "updatedAt": "2018-12-21T15:06:21.961Z",
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "userObj": {
+          "$ref": "#/definitions/UserObj"
+        }
+      },
+      "required": [
+        "info",
+        "userObj"
+      ]
+    },
+    "UserObj": {
+      "title": "UserObj",
+      "type": "object",
+      "properties": {
+        "subscribed": {
+          "type": "boolean"
+        },
+        "typeOfUser": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "subscribed",
+        "typeOfUser",
+        "_id",
+        "firstName",
+        "lastName",
+        "email",
+        "password",
+        "phone",
+        "bio",
+        "gender",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "LoginSuccess": {
+      "title": "LoginSuccess",
+      "example": {
+        "info": "User Login successful",
+        "typeOfUser": 2,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1YzFkMDE2ZDk1NzBiODFkMzBkZGNlYzMiLCJ0eXBlT2ZVc2VyIjoyLCJuYW1lIjoiU291bXlhaml0IER1dHRhIiwiaWF0IjoxNTQ1NDA0ODcxLCJleHAiOjE2OTU0MDQ4NzF9.SItqx1B-i5WbnqQ1p7VsRluiMv6MCOwLG5_VKkH3yFs"
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "typeOfUser": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "info",
+        "typeOfUser",
+        "token"
+      ]
+    },
+    "CreateCitySuccess": {
+      "title": "CreateCitySuccess",
+      "example": {
+        "info": "City save successful",
+        "cityObj": {
+          "_id": "5c1d08698e9d4135ec25a55c",
+          "name": "New York",
+          "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+          "latitude": "40.7128° N",
+          "longitude": "74.0060° W",
+          "pageTitle": "New York - Beauty City",
+          "createdAt": "2018-12-21T15:36:09.892Z",
+          "updatedAt": "2018-12-21T15:36:09.892Z",
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "cityObj": {
+          "$ref": "#/definitions/CityObj"
+        }
+      },
+      "required": [
+        "info",
+        "cityObj"
+      ]
+    },
+    "CityObj": {
+      "title": "CityObj",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "pageTitle": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "name",
+        "description",
+        "latitude",
+        "longitude",
+        "pageTitle",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "GetCitiesFound": {
+      "title": "GetCitiesFound",
+      "example": {
+        "info": "City data found!",
+        "data": [
+          {
+            "_id": "5c1d08698e9d4135ec25a55c",
+            "name": "New York",
+            "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+            "latitude": "40.7128° N",
+            "longitude": "74.0060° W",
+            "pageTitle": "New York - Beauty City",
+            "createdAt": "2018-12-21T15:36:09.892Z",
+            "updatedAt": "2018-12-21T15:36:09.892Z",
+            "__v": 0
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Datum2"
+          }
+        }
+      },
+      "required": [
+        "info",
+        "data"
+      ]
+    },
+    "Datum2": {
+      "title": "Datum2",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "example": "5c1d08698e9d4135ec25a55c",
+          "type": "string"
+        },
+        "name": {
+          "example": "New York",
+          "type": "string"
+        },
+        "description": {
+          "example": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+          "type": "string"
+        },
+        "latitude": {
+          "example": "40.7128° N",
+          "type": "string"
+        },
+        "longitude": {
+          "example": "74.0060° W",
+          "type": "string"
+        },
+        "pageTitle": {
+          "example": "New York - Beauty City",
+          "type": "string"
+        },
+        "createdAt": {
+          "example": "12/21/2018 3:36:09 PM",
+          "type": "string"
+        },
+        "updatedAt": {
+          "example": "12/21/2018 3:36:09 PM",
+          "type": "string"
+        },
+        "__v": {
+          "example": 0,
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "name",
+        "description",
+        "latitude",
+        "longitude",
+        "pageTitle",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "GetCityByidsuccess": {
+      "title": "GetCityByidsuccess",
+      "example": {
+        "info": "City data found!",
+        "data": {
+          "_id": "5c1d08698e9d4135ec25a55c",
+          "name": "New York",
+          "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+          "latitude": "40.7128° N",
+          "longitude": "74.0060° W",
+          "pageTitle": "New York - Beauty City",
+          "createdAt": "2018-12-21T15:36:09.892Z",
+          "updatedAt": "2018-12-21T15:36:09.892Z",
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "required": [
+        "info",
+        "data"
+      ]
+    },
+    "Data": {
+      "title": "Data",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "pageTitle": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "name",
+        "description",
+        "latitude",
+        "longitude",
+        "pageTitle",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "EditCitysuccess": {
+      "title": "EditCitysuccess",
+      "example": {
+        "info": "City Object Saved",
+        "cityObj": {
+          "_id": "5c1d08698e9d4135ec25a55c",
+          "name": "New York",
+          "description": "This is new desc",
+          "latitude": "40.7128° N",
+          "longitude": "74.0060° W",
+          "pageTitle": "this is new page title",
+          "createdAt": "2018-12-21T15:36:09.892Z",
+          "updatedAt": "2018-12-21T16:18:08.103Z",
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "cityObj": {
+          "$ref": "#/definitions/CityObj"
+        }
+      },
+      "required": [
+        "info",
+        "cityObj"
+      ]
+    },
+    "DeleteCitysuccess": {
+      "title": "DeleteCitysuccess",
+      "example": {
+        "info": "City Delete Successful"
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "info"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Restaurant"
+    },
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "City"
+    }
+  ]
+}
