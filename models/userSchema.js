@@ -42,6 +42,27 @@ var userSchema = new Schema({
             type: Boolean,
             default: true
         },
+        "country" :{
+            type: String
+        },
+        "state" : {
+            type: String
+        },
+        "city": {
+          type: String
+        },
+        "facebook" : {
+          type: String
+        },
+        "instagram" : {
+          type: String
+        },
+        "youtube" : {
+          type: String
+        },
+        "website" : {
+            type: String
+        },
         "typeOfUser" : {
             type: Number,
             required : true,

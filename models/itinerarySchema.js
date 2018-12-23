@@ -30,11 +30,12 @@ var itinerarySchema = new Schema({
             required: true
         },
         "restaurantData" : [{
-            date : {
+            "date" : {
                 type : Date
             },
-            restaurantId : [{
-                type : ObjectId
+            "restaurantId" : [{
+                type : ObjectId,
+                ref : 'Restaurant'
             }]
         }],
         "public" : {
@@ -48,4 +49,4 @@ var itinerarySchema = new Schema({
     }
 );
 
-module.exports = mongoose.model('Itinerary', restaurantSchema);
+module.exports = mongoose.model('Itinerary', itinerarySchema);

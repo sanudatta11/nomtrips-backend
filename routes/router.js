@@ -7,6 +7,8 @@ let config = require('../config');
 let cityRoutes = require('./city');
 let restaurantRoutes = require('./restaurant');
 let userRoutes = require('./userProfile');
+let itineraryRoute = require('./itinerary');
+let nomListRoutes = require('./nomList');
 
 //Non Auth Routes
 
@@ -17,6 +19,10 @@ router.get('/getCityById/:cityId',cityRoutes.getCityById);
 //Restaurant Routes
 router.get('/getRestaurantsByCityId/:cityId',restaurantRoutes.getRestaurantsByCityId);
 router.post('/getRestaurantsByNameAndCityId',restaurantRoutes.getRestaurantsByNameAndCityId);
+
+//Itinerary Route
+router.get('/getItinerary',itineraryRoute.getItinerary);
+
 
 //Auth Routes
 router.use(function(req, res, next) {
@@ -32,7 +38,6 @@ router.use(function(req, res, next) {
                     });
                 } else {
                     req.userId = decoded.userId;
-                    req.companyId = decoded.companyId;
                     next();
                 }
             });
@@ -61,4 +66,20 @@ router.get('/deleteCity/:cityId',cityRoutes.deleteCity);
 router.post('/createRestaurant',restaurantRoutes.createRestaurant);
 router.post('/editRestaurant',restaurantRoutes.editRestaurant);
 router.get('/deleteRestaurant/:restaurantId',restaurantRoutes.deleteRestaurant);
+
+//Itinerary Routes
+router.post('/createItinerary',itineraryRoute.createItinerary);
+router.post('/editItinerary',itineraryRoute.editItinerary);
+router.get('/deleteItinerary/:itineraryId',itineraryRoute.deleteItinerary);
+
+//NomList Routes
+router.post('/addToNomList',nomListRoutes.addToNomList);
+router.get('/removeFromNomList/:nomListId',nomListRoutes.removeFromNomList);
+router.get('/getNomList',nomListRoutes.getNomList);
+
+//Profile Routes
+router.post('/updateProfile',userRoutes.editProfile);
+router.get('/getProfile',userRoutes.getProfile);
+router.post('/updateSocialProfile',userRoutes.editSocial);
+
 module.exports = router;
