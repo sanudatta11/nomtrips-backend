@@ -1147,6 +1147,768 @@
           }
         }
       }
+    },
+    "/api/createItinerary": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Create itinerary",
+        "tags": [
+          "Itinerary"
+        ],
+        "operationId": "ApiCreateItineraryPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateitineraryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateitinerarySuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "public": true,
+                "_id": "5c1f806d6204c1647459e8cb",
+                "userId": "5c1d016d9570b81d30ddcec3",
+                "cityId": "5c1d1293bcbbf31530a33568",
+                "tripName": "Trip to Vancouver",
+                "dateFrom": "2018-11-12T00:00:00Z",
+                "dateTo": "2018-11-13T00:00:00Z",
+                "description": "This is a description",
+                "restaurantData": [
+                  {
+                    "restaurantId": [
+                      "5c1d18a9f08fc24ca8541041",
+                      "5c1f7d9970fe5300175f649d"
+                    ],
+                    "_id": "5c1f806d6204c1647459e8cd",
+                    "date": "2018-11-12T00:00:00Z"
+                  },
+                  {
+                    "restaurantId": [
+                      "5c1f7ddd6204c1647459e8c5",
+                      "5c1f7e946204c1647459e8c6"
+                    ],
+                    "_id": "5c1f806d6204c1647459e8cc",
+                    "date": "2018-11-13T00:00:00Z"
+                  }
+                ],
+                "createdAt": "2018-12-23T12:32:45.259Z",
+                "updatedAt": "2018-12-23T12:32:45.259Z",
+                "__v": 0
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "648"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"288-+9gK7frJkEqhzDD9XgETg4l+Ans\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:32:45 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/editItinerary": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Edit Itinerary",
+        "tags": [
+          "Itinerary"
+        ],
+        "operationId": "ApiEditItineraryPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditItineraryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EditItinerarySuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "Data updated"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "23"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"17-17RV/QZ/hQ10BSZuDnoMeTMXTXA\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:37:32 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/deleteItinerary/5c1f806d6204c1647459e8cb": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Delete Itinerary",
+        "tags": [
+          "Itinerary"
+        ],
+        "operationId": "ApiDeleteItinerary5c1f806d6204c1647459e8cbGet",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeleteItinerarysuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "Itinerary delete success"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "35"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"23-vIEvkkFNx/lEzWwbaC9SpsTljuc\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:38:50 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/addToNomList": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Nom List Add",
+        "tags": [
+          "NomList"
+        ],
+        "operationId": "ApiAddToNomListPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "cityId",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "restaurantId",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/NomListAddsuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "NomList save successful",
+                "newRes": {
+                  "_id": "5c1f837505319e5e6cff8b40",
+                  "userId": "5c1d016d9570b81d30ddcec3",
+                  "cityId": "5c1d1293bcbbf31530a33568",
+                  "restaurantId": "5c1d18a9f08fc24ca8541041",
+                  "createdAt": "2018-12-23T12:45:41.841Z",
+                  "updatedAt": "2018-12-23T12:45:41.841Z",
+                  "__v": 0
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "278"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"116-/dqsVp6/6kFXdQcb0A9lFFhoF18\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:45:42 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/removeFromNomList/5c1f849f06780056c0455734": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Nom List Delete",
+        "tags": [
+          "NomList"
+        ],
+        "operationId": "ApiRemoveFromNomList5c1f849f06780056c0455734Get",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/NomListDelete"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "NomList Removed!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "27"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1b-h1SLm3mPodLiRdNaCPE8aLs7II8\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:50:53 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getNomList": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Nom List",
+        "tags": [
+          "NomList"
+        ],
+        "operationId": "ApiGetNomListGet",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GetNomListsuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "Nom List found",
+                "data": [
+                  {
+                    "_id": "5c1f852106780056c0455735",
+                    "userId": "5c1d016d9570b81d30ddcec3",
+                    "cityId": "5c1d1293bcbbf31530a33568",
+                    "restaurantId": "5c1d18a9f08fc24ca8541041",
+                    "createdAt": "2018-12-23T12:52:49.361Z",
+                    "updatedAt": "2018-12-23T12:52:49.361Z",
+                    "__v": 0
+                  }
+                ]
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "269"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"10d-VUsfT9478s5uu27EwUFhfzmG1fA\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:52:51 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/updateProfile": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Update Profile",
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "ApiUpdateProfilePost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "firstName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "lastName",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "phone",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "gender",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "state",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "city",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateProfilesuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "User object saved",
+                "userObj": {
+                  "subscribed": true,
+                  "typeOfUser": 2,
+                  "_id": "5c1d016d9570b81d30ddcec3",
+                  "firstName": "soumyajit1",
+                  "lastName": "dutta",
+                  "email": "abcd@gmail.com",
+                  "password": "O8Sbc+L7IBkk2dzOX7bW/Xz79YxJvozEZDnAXcY0sVE=",
+                  "phone": 9928638389,
+                  "bio": "hi hi hi hih hii",
+                  "gender": "male",
+                  "createdAt": "2018-12-21T15:06:21.961Z",
+                  "updatedAt": "2018-12-23T12:55:04.405Z",
+                  "__v": 0,
+                  "country": "India",
+                  "state": "karnataka",
+                  "city": "Bangalore"
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "436"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1b4-swIc6WfOs9QMZJ73/5hx5AMMyWQ\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:55:04 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getProfile": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "Get Profile",
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "ApiGetProfileGet",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/GetProfilesuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "subscribed": true,
+                "typeOfUser": 2,
+                "_id": "5c1d016d9570b81d30ddcec3",
+                "firstName": "soumyajit1",
+                "lastName": "dutta",
+                "email": "abcd@gmail.com",
+                "password": "O8Sbc+L7IBkk2dzOX7bW/Xz79YxJvozEZDnAXcY0sVE=",
+                "phone": 9928638389,
+                "bio": "hi hi hi hih hii",
+                "gender": "male",
+                "createdAt": "2018-12-21T15:06:21.961Z",
+                "updatedAt": "2018-12-23T12:55:04.405Z",
+                "__v": 0,
+                "city": "Bangalore",
+                "country": "India",
+                "state": "karnataka"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "397"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"18d-BxT7PQBmWxkwDrrOEZq6l07jEi0\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:55:42 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/updateSocialProfile": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Update Social Profile",
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "ApiUpdateSocialProfilePost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "instagram",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "facebook",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "website",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "youtube",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateSocialProfilesuccess"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "info": "User object saved",
+                "userObj": {
+                  "subscribed": true,
+                  "typeOfUser": 2,
+                  "_id": "5c1d016d9570b81d30ddcec3",
+                  "firstName": "soumyajit1",
+                  "lastName": "dutta",
+                  "email": "abcd@gmail.com",
+                  "password": "O8Sbc+L7IBkk2dzOX7bW/Xz79YxJvozEZDnAXcY0sVE=",
+                  "phone": 9928638389,
+                  "bio": "hi hi hi hih hii",
+                  "gender": "male",
+                  "createdAt": "2018-12-21T15:06:21.961Z",
+                  "updatedAt": "2018-12-23T12:56:52.897Z",
+                  "__v": 0,
+                  "city": "Bangalore",
+                  "country": "India",
+                  "state": "karnataka",
+                  "instagram": "testinsta",
+                  "youtube": "abcdabcd",
+                  "website": "abcdabcd",
+                  "facebook": "abcdabcd"
+                }
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "524"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"20c-jTu40mlyIQ5AeNQ87CaWT4PPbps\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Sun, 23 Dec 2018 12:56:53 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -1962,6 +2724,819 @@
       "required": [
         "info"
       ]
+    },
+    "CreateitineraryRequest": {
+      "title": "CreateitineraryRequest",
+      "example": {
+        "cityId": "5c1d1293bcbbf31530a33568",
+        "tripName": "Trip to Vancouver",
+        "dateFrom": "2018-11-12",
+        "dateTo": "2018-11-13",
+        "description": "This is a description",
+        "public": "true",
+        "restaurantData": [
+          {
+            "date": "2018-11-12",
+            "restaurantId": [
+              "5c1d18a9f08fc24ca8541041",
+              "5c1f7d9970fe5300175f649d"
+            ]
+          },
+          {
+            "date": "2018-11-13",
+            "restaurantId": [
+              "5c1f7ddd6204c1647459e8c5",
+              "5c1f7e946204c1647459e8c6"
+            ]
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "cityId": {
+          "type": "string"
+        },
+        "tripName": {
+          "type": "string"
+        },
+        "dateFrom": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "public": {
+          "type": "string"
+        },
+        "restaurantData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RestaurantDatum"
+          }
+        }
+      },
+      "required": [
+        "cityId",
+        "tripName",
+        "dateFrom",
+        "dateTo",
+        "description",
+        "public",
+        "restaurantData"
+      ]
+    },
+    "RestaurantDatum": {
+      "title": "RestaurantDatum",
+      "type": "object",
+      "properties": {
+        "date": {
+          "example": "2018-11-12",
+          "type": "string"
+        },
+        "restaurantId": {
+          "example": [
+            "5c1d18a9f08fc24ca8541041",
+            "5c1f7d9970fe5300175f649d"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "date",
+        "restaurantId"
+      ]
+    },
+    "CreateitinerarySuccess": {
+      "title": "CreateitinerarySuccess",
+      "example": {
+        "public": true,
+        "_id": "5c1f806d6204c1647459e8cb",
+        "userId": "5c1d016d9570b81d30ddcec3",
+        "cityId": "5c1d1293bcbbf31530a33568",
+        "tripName": "Trip to Vancouver",
+        "dateFrom": "2018-11-12T00:00:00Z",
+        "dateTo": "2018-11-13T00:00:00Z",
+        "description": "This is a description",
+        "restaurantData": [
+          {
+            "restaurantId": [
+              "5c1d18a9f08fc24ca8541041",
+              "5c1f7d9970fe5300175f649d"
+            ],
+            "_id": "5c1f806d6204c1647459e8cd",
+            "date": "2018-11-12T00:00:00Z"
+          },
+          {
+            "restaurantId": [
+              "5c1f7ddd6204c1647459e8c5",
+              "5c1f7e946204c1647459e8c6"
+            ],
+            "_id": "5c1f806d6204c1647459e8cc",
+            "date": "2018-11-13T00:00:00Z"
+          }
+        ],
+        "createdAt": "2018-12-23T12:32:45.259Z",
+        "updatedAt": "2018-12-23T12:32:45.259Z",
+        "__v": 0
+      },
+      "type": "object",
+      "properties": {
+        "public": {
+          "type": "boolean"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "cityId": {
+          "type": "string"
+        },
+        "tripName": {
+          "type": "string"
+        },
+        "dateFrom": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "restaurantData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RestaurantDatum1"
+          }
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "public",
+        "_id",
+        "userId",
+        "cityId",
+        "tripName",
+        "dateFrom",
+        "dateTo",
+        "description",
+        "restaurantData",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "RestaurantDatum1": {
+      "title": "RestaurantDatum1",
+      "type": "object",
+      "properties": {
+        "restaurantId": {
+          "example": [
+            "5c1d18a9f08fc24ca8541041",
+            "5c1f7d9970fe5300175f649d"
+          ],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "_id": {
+          "example": "5c1f806d6204c1647459e8cd",
+          "type": "string"
+        },
+        "date": {
+          "example": "11/12/2018 12:00:00 AM",
+          "type": "string"
+        }
+      },
+      "required": [
+        "restaurantId",
+        "_id",
+        "date"
+      ]
+    },
+    "EditItineraryRequest": {
+      "title": "EditItineraryRequest",
+      "example": {
+        "itineraryId": "5c1f806d6204c1647459e8cb",
+        "editItineraryObj": {
+          "cityId": "5c1d1293bcbbf31530a33568",
+          "tripName": "Trip to Vancouver edited",
+          "dateFrom": "2018-11-14",
+          "dateTo": "2018-11-15",
+          "description": "This is a description after edit",
+          "public": "true",
+          "restaurantData": [
+            {
+              "date": "2018-11-14",
+              "restaurantId": [
+                "5c1d18a9f08fc24ca8541041",
+                "5c1f7d9970fe5300175f649d"
+              ]
+            },
+            {
+              "date": "2018-11-15",
+              "restaurantId": [
+                "5c1f7ddd6204c1647459e8c5",
+                "5c1f7e946204c1647459e8c6"
+              ]
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "itineraryId": {
+          "type": "string"
+        },
+        "editItineraryObj": {
+          "$ref": "#/definitions/EditItineraryObj"
+        }
+      },
+      "required": [
+        "itineraryId",
+        "editItineraryObj"
+      ]
+    },
+    "EditItineraryObj": {
+      "title": "EditItineraryObj",
+      "type": "object",
+      "properties": {
+        "cityId": {
+          "type": "string"
+        },
+        "tripName": {
+          "type": "string"
+        },
+        "dateFrom": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "public": {
+          "type": "string"
+        },
+        "restaurantData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RestaurantDatum"
+          }
+        }
+      },
+      "required": [
+        "cityId",
+        "tripName",
+        "dateFrom",
+        "dateTo",
+        "description",
+        "public",
+        "restaurantData"
+      ]
+    },
+    "EditItinerarySuccess": {
+      "title": "EditItinerarySuccess",
+      "example": {
+        "info": "Data updated"
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "info"
+      ]
+    },
+    "DeleteItinerarysuccess": {
+      "title": "DeleteItinerarysuccess",
+      "example": {
+        "info": "Itinerary delete success"
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "info"
+      ]
+    },
+    "NomListAddsuccess": {
+      "title": "NomListAddsuccess",
+      "example": {
+        "info": "NomList save successful",
+        "newRes": {
+          "_id": "5c1f837505319e5e6cff8b40",
+          "userId": "5c1d016d9570b81d30ddcec3",
+          "cityId": "5c1d1293bcbbf31530a33568",
+          "restaurantId": "5c1d18a9f08fc24ca8541041",
+          "createdAt": "2018-12-23T12:45:41.841Z",
+          "updatedAt": "2018-12-23T12:45:41.841Z",
+          "__v": 0
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "newRes": {
+          "$ref": "#/definitions/NewRes1"
+        }
+      },
+      "required": [
+        "info",
+        "newRes"
+      ]
+    },
+    "NewRes1": {
+      "title": "NewRes1",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "cityId": {
+          "type": "string"
+        },
+        "restaurantId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "userId",
+        "cityId",
+        "restaurantId",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "NomListDelete": {
+      "title": "NomListDelete",
+      "example": {
+        "info": "NomList Removed!"
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "info"
+      ]
+    },
+    "GetNomListsuccess": {
+      "title": "GetNomListsuccess",
+      "example": {
+        "info": "Nom List found",
+        "data": [
+          {
+            "_id": "5c1f852106780056c0455735",
+            "userId": "5c1d016d9570b81d30ddcec3",
+            "cityId": "5c1d1293bcbbf31530a33568",
+            "restaurantId": "5c1d18a9f08fc24ca8541041",
+            "createdAt": "2018-12-23T12:52:49.361Z",
+            "updatedAt": "2018-12-23T12:52:49.361Z",
+            "__v": 0
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Data1"
+          }
+        }
+      },
+      "required": [
+        "info",
+        "data"
+      ]
+    },
+    "Data1": {
+      "title": "Data1",
+      "type": "object",
+      "properties": {
+        "_id": {
+          "example": "5c1f852106780056c0455735",
+          "type": "string"
+        },
+        "userId": {
+          "example": "5c1d016d9570b81d30ddcec3",
+          "type": "string"
+        },
+        "cityId": {
+          "example": "5c1d1293bcbbf31530a33568",
+          "type": "string"
+        },
+        "restaurantId": {
+          "example": "5c1d18a9f08fc24ca8541041",
+          "type": "string"
+        },
+        "createdAt": {
+          "example": "12/23/2018 12:52:49 PM",
+          "type": "string"
+        },
+        "updatedAt": {
+          "example": "12/23/2018 12:52:49 PM",
+          "type": "string"
+        },
+        "__v": {
+          "example": 0,
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "_id",
+        "userId",
+        "cityId",
+        "restaurantId",
+        "createdAt",
+        "updatedAt",
+        "__v"
+      ]
+    },
+    "UpdateProfilesuccess": {
+      "title": "UpdateProfilesuccess",
+      "example": {
+        "info": "User object saved",
+        "userObj": {
+          "subscribed": true,
+          "typeOfUser": 2,
+          "_id": "5c1d016d9570b81d30ddcec3",
+          "firstName": "soumyajit1",
+          "lastName": "dutta",
+          "email": "abcd@gmail.com",
+          "password": "O8Sbc+L7IBkk2dzOX7bW/Xz79YxJvozEZDnAXcY0sVE=",
+          "phone": 9928638389,
+          "bio": "hi hi hi hih hii",
+          "gender": "male",
+          "createdAt": "2018-12-21T15:06:21.961Z",
+          "updatedAt": "2018-12-23T12:55:04.405Z",
+          "__v": 0,
+          "country": "India",
+          "state": "karnataka",
+          "city": "Bangalore"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "userObj": {
+          "$ref": "#/definitions/UserObj1"
+        }
+      },
+      "required": [
+        "info",
+        "userObj"
+      ]
+    },
+    "UserObj1": {
+      "title": "UserObj1",
+      "type": "object",
+      "properties": {
+        "subscribed": {
+          "type": "boolean"
+        },
+        "typeOfUser": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "country": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "subscribed",
+        "typeOfUser",
+        "_id",
+        "firstName",
+        "lastName",
+        "email",
+        "password",
+        "phone",
+        "bio",
+        "gender",
+        "createdAt",
+        "updatedAt",
+        "__v",
+        "country",
+        "state",
+        "city"
+      ]
+    },
+    "GetProfilesuccess": {
+      "title": "GetProfilesuccess",
+      "example": {
+        "subscribed": true,
+        "typeOfUser": 2,
+        "_id": "5c1d016d9570b81d30ddcec3",
+        "firstName": "soumyajit1",
+        "lastName": "dutta",
+        "email": "abcd@gmail.com",
+        "password": "O8Sbc+L7IBkk2dzOX7bW/Xz79YxJvozEZDnAXcY0sVE=",
+        "phone": 9928638389,
+        "bio": "hi hi hi hih hii",
+        "gender": "male",
+        "createdAt": "2018-12-21T15:06:21.961Z",
+        "updatedAt": "2018-12-23T12:55:04.405Z",
+        "__v": 0,
+        "city": "Bangalore",
+        "country": "India",
+        "state": "karnataka"
+      },
+      "type": "object",
+      "properties": {
+        "subscribed": {
+          "type": "boolean"
+        },
+        "typeOfUser": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "subscribed",
+        "typeOfUser",
+        "_id",
+        "firstName",
+        "lastName",
+        "email",
+        "password",
+        "phone",
+        "bio",
+        "gender",
+        "createdAt",
+        "updatedAt",
+        "__v",
+        "city",
+        "country",
+        "state"
+      ]
+    },
+    "UpdateSocialProfilesuccess": {
+      "title": "UpdateSocialProfilesuccess",
+      "example": {
+        "info": "User object saved",
+        "userObj": {
+          "subscribed": true,
+          "typeOfUser": 2,
+          "_id": "5c1d016d9570b81d30ddcec3",
+          "firstName": "soumyajit1",
+          "lastName": "dutta",
+          "email": "abcd@gmail.com",
+          "password": "O8Sbc+L7IBkk2dzOX7bW/Xz79YxJvozEZDnAXcY0sVE=",
+          "phone": 9928638389,
+          "bio": "hi hi hi hih hii",
+          "gender": "male",
+          "createdAt": "2018-12-21T15:06:21.961Z",
+          "updatedAt": "2018-12-23T12:56:52.897Z",
+          "__v": 0,
+          "city": "Bangalore",
+          "country": "India",
+          "state": "karnataka",
+          "instagram": "testinsta",
+          "youtube": "abcdabcd",
+          "website": "abcdabcd",
+          "facebook": "abcdabcd"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "string"
+        },
+        "userObj": {
+          "$ref": "#/definitions/UserObj2"
+        }
+      },
+      "required": [
+        "info",
+        "userObj"
+      ]
+    },
+    "UserObj2": {
+      "title": "UserObj2",
+      "type": "object",
+      "properties": {
+        "subscribed": {
+          "type": "boolean"
+        },
+        "typeOfUser": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "_id": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "__v": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "instagram": {
+          "type": "string"
+        },
+        "youtube": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "facebook": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "subscribed",
+        "typeOfUser",
+        "_id",
+        "firstName",
+        "lastName",
+        "email",
+        "password",
+        "phone",
+        "bio",
+        "gender",
+        "createdAt",
+        "updatedAt",
+        "__v",
+        "city",
+        "country",
+        "state",
+        "instagram",
+        "youtube",
+        "website",
+        "facebook"
+      ]
     }
   },
   "tags": [
@@ -1973,6 +3548,15 @@
     },
     {
       "name": "City"
+    },
+    {
+      "name": "Itinerary"
+    },
+    {
+      "name": "NomList"
+    },
+    {
+      "name": "Profile"
     }
   ]
 }
