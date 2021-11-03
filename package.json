@@ -19,6 +19,6 @@
     "pug": "3.0.1",
     "sha256": "^0.2.0",
     "swagger-ui-express": "^4.0.1",
-    "validator": "^10.9.0"
+    "validator": "^13.7.0"
   }
 }
